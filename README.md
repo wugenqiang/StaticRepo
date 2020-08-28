@@ -1,14 +1,16 @@
 # 👒 静态文件存储库
-> 地址：[https://wugenqiang.github.io/StaticRepo/](https://wugenqiang.github.io/StaticRepo/) + src + [ js/css/json ] 具体看下面使用链接，可以直接引用！链接地址不会改变！内容会不断完善！🎉🎉 源文件地址：[https://github.com/wugenqiang/StaticRepo](https://github.com/wugenqiang/StaticRepo)
+> 地址使用一：[https://wugenqiang.github.io/StaticRepo/](https://wugenqiang.github.io/StaticRepo/) + src + [ js/css/json ] 
+> 地址使用二（CDN）：[https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/](https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/)
+> 具体看下面使用链接，可以直接引用！链接地址不会改变！内容会不断完善！🎉🎉 源文件地址：[https://github.com/wugenqiang/StaticRepo](https://github.com/wugenqiang/StaticRepo)
 
 ## Src
 ### CSS
 * Iconfont 图标：[https://wugenqiang.github.io/StaticRepo/src/css/iconfont.css](https://wugenqiang.github.io/StaticRepo/src/css/iconfont.css) 或者使用 jsdelivr 加速： [https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/css/iconfont.css](https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/css/iconfont.css)
-* sponsor.css：[https://wugenqiang.github.io/StaticRepo/src/css/sponsor.css](https://wugenqiang.github.io/StaticRepo/src/css/sponsor.css)
+* sponsor.css：[https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/css/sponsor.css](https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/css/sponsor.css)
 
 ### js
 
-* sponsor.js：[https://wugenqiang.github.io/StaticRepo/src/js/sponsor.js](https://wugenqiang.github.io/StaticRepo/src/js/sponsor.js)
+* sponsor.js：[https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/js/sponsor.js](https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/js/sponsor.js)
 
 ## 小功能体验区
 
