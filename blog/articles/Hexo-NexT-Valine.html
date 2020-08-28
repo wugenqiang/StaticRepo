@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+<script src="/blog/js/src/photoswipe.min.js?v="></script>
+<script src="/blog/js/src/photoswipe-ui-default.min.js?v="></script>
+
+  <meta charset="UTF-8">
+<meta name="google-site-verification" content="RK_KkmN-cdriQT8jq3jsDsJJxFhyIRzHA4daqKePNk8">
+<meta name="baidu-site-verification" content="bqaja5HAOz">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#414852">
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/blog/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css">
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#414852">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: true,
+    fancybox: true,
+    fastclick: true,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164658031-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-164658031-1');
+</script>
+
+<script data-ad-client="ca-pub-1890271224952559" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+  
+
+
+
+
+
+
+  <meta name="description" content="评论系统 Valine 的使用 注明：以下方案是在 Valine 1.4.9 版本下完成，对于其他版本应该会根据实际情况修改参数，使用 F12 查看参数修改即可使用！（说明于 2020 - 04 - 25） 强烈推荐大佬们直接去看 cungudafa 对于 Valine 评论系统的优化，实在是棒，本人博客：EnjoyToShare 的评论系统也是根据这位大佬的文章阐述修改而来，在此对她表示感谢！">
+<meta name="keywords" content="Hexo-NexT-Template,Valine">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo NexT 评论系统 Valine 的使用">
+<meta property="og:url" content="https://wugenqiang.js.org/articles/Hexo-NexT-Valine.html">
+<meta property="og:site_name" content="EnjoyToShare">
+<meta property="og:description" content="评论系统 Valine 的使用 注明：以下方案是在 Valine 1.4.9 版本下完成，对于其他版本应该会根据实际情况修改参数，使用 F12 查看参数修改即可使用！（说明于 2020 - 04 - 25） 强烈推荐大佬们直接去看 cungudafa 对于 Valine 评论系统的优化，实在是棒，本人博客：EnjoyToShare 的评论系统也是根据这位大佬的文章阐述修改而来，在此对她表示感谢！">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424152854.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424193358.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424193932.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424183458.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424184936.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424183458.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424184936.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424160158.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424162618.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424191415.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424162805.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424163011.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424163217.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424163354.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424164155.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424164345.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424164657.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424191359.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424174606.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424174743.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424180313.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424182741.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425085135.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425085301.png">
+<meta property="og:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425091911.png">
+<meta property="og:updated_time" content="2020-04-25T09:21:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo NexT 评论系统 Valine 的使用">
+<meta name="twitter:description" content="评论系统 Valine 的使用 注明：以下方案是在 Valine 1.4.9 版本下完成，对于其他版本应该会根据实际情况修改参数，使用 F12 查看参数修改即可使用！（说明于 2020 - 04 - 25） 强烈推荐大佬们直接去看 cungudafa 对于 Valine 评论系统的优化，实在是棒，本人博客：EnjoyToShare 的评论系统也是根据这位大佬的文章阐述修改而来，在此对她表示感谢！">
+<meta name="twitter:image" content="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424152854.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://wugenqiang.js.org/articles/Hexo-NexT-Valine.html">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入查看密码') !== ''){
+                alert('密码不正确,请询问主编大大');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+  <title>Hexo NexT 评论系统 Valine 的使用 | EnjoyToShare</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+</head>
+
+<body itemscope itemtype="https://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="https://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EnjoyToShare</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">身体和灵魂总要有一个在路上</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>作者</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-love">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="https://wugenqiang.gitee.io/wgq520mll/" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-heart"></i> <br>告白</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-links">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/links/" rel="section"><i class="menu-item-icon fa fa-fw fa-paper-plane"></i> <br>友链</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-ibooks">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="https://wugenqiang.github.io/NoteBook/" rel="noopener" target="_blank"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>笔记Tec</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-photos">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/photos/" rel="section"><i class="menu-item-icon fa fa-fw fa-camera"></i> <br>相册</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-toolbox">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/laboratory/toolBox/index.html" rel="section"><i class="menu-item-icon fa fa-fw fa-amazon"></i> <br>工具Box</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="https://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wugenqiang.js.org/blog/articles/Hexo-NexT-Valine.html">
+
+    <span hidden itemprop="author" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="name" content="WuGenQiang">
+      <meta itemprop="description" content="要么出众，要么出局">
+      <meta itemprop="image" content="/blog/images/fighting_wugenqiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="EnjoyToShare">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Hexo NexT 评论系统 Valine 的使用
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-04-25 09:21:29" itemprop="dateCreated datePublished" datetime="2020-04-25T09:21:29Z">2020-04-25</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/blog/categories/Hexo-NexT-Template/" itemprop="url" rel="index"><span itemprop="name">Hexo-NexT-Template</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/blog/articles/Hexo-NexT-Valine.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/articles/Hexo-NexT-Valine.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/blog/articles/Hexo-NexT-Valine.html" class="leancloud_visitors" data-flag-title="Hexo NexT 评论系统 Valine 的使用">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">热度：</span>
+              
+                <span class="leancloud-visitors-count"></span><span>℃</span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="评论系统-valine-的使用">评论系统 Valine 的使用</h1>
+<p>注明：以下方案是在 Valine 1.4.9 版本下完成，对于其他版本应该会根据实际情况修改参数，使用 F12 查看参数修改即可使用！（说明于 2020 - 04 - 25）</p>
+<p>强烈推荐大佬们直接去看 <a href="https://blog.csdn.net/cungudafa/article/details/105548858" target="_blank" rel="noopener">cungudafa</a> 对于 Valine 评论系统的优化，实在是棒，本人博客：<a href="https://wugenqiang.github.io/" target="_blank" rel="noopener">EnjoyToShare</a> 的评论系统也是根据这位大佬的文章阐述修改而来，在此对她表示感谢！</p>
+<h2 id="1-valine-的介绍">1 Valine 的介绍</h2>
+<p>一款快速、简洁且高效的无后端评论系统。</p>
+<p><a href="https://valine.js.org/" target="_blank" rel="noopener">Valine</a> 诞生于 2017 年 8 月 7 日，是一款基于 <a href="https://www.leancloud.cn/" target="_blank" rel="noopener">LeanCloud</a> 的快速、简洁且高效的无后端评论系统。</p>
+<p>理论上支持但不限于静态博客，目前已有 Hexo、Jekyll、Typecho、Hugo、Ghost 等博客程序在使用 <a href="https://valine.js.org/" target="_blank" rel="noopener">Valine</a>。</p>
+<blockquote>
+<p>Valine 特性</p>
+</blockquote>
+<ul>
+<li>快速</li>
+<li>安全</li>
+<li>Emoji 😉</li>
+<li>无后端实现</li>
+<li>MarkDown 全语法支持</li>
+<li>轻量易用(~15kb gzipped)</li>
+<li>文章阅读量统计 v1.2.0+</li>
+</ul>
+<h2 id="2-valine-的使用">2 Valine 的使用</h2>
+<p>1 注册 <a href="https://leancloud.cn/" target="_blank" rel="noopener">LeanCloud</a></p>
+<p>2 创建 Valine 应用，名称任意，例如 Valine-Admin</p>
+<p>3 进入对应的应用，点击 <code>设置 -&gt; 应用 Keys</code>，获取 <code>AppID</code> 和 <code>AppKey</code></p>
+<p>4 在 Hexo 博客主题配置文件 <code>next/_config.yml</code> 中进行配置，大家也可根据自己来设置该评论设置。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">valine:</span><br><span class="line">  enable: true # 设置为true，默认为false</span><br><span class="line">  appid:  # 将应用key的App ID设置在这里</span><br><span class="line">  appkey: # 将应用key的App Key设置在这里</span><br><span class="line">  notify: false# 邮箱通知 , https://github.com/xCss/Valine/wiki，默认为false</span><br><span class="line">  verify: false# 验证码 默认为false</span><br><span class="line">  placeholder: Just go go ^_^ # 初始化评论显示，根据自己修改，这里默认，</span><br><span class="line">  avatar: monsterid # 头像风格，默认为mm，可进入网址：https://valine.js.org/visitor.html查看头像设置，这里有许多头像风格，进行设置</span><br><span class="line">  guest_info: nick,mail,link # 自定义评论标题</span><br><span class="line">  pageSize: 10 # 分页大小，10页就自动分页</span><br><span class="line">  visitor: true # 是否允许游客评论 ，进入官网查看设置：https://valine.js.org/visitor.html</span><br></pre></td></tr></table></figure>
+<p>了解更多 Valine 配置参数信息请参考：<a href="https://valine.js.org/" target="_blank" rel="noopener">Valine 官方文档</a></p>
+<h2 id="3-valine-的配置">3 Valine 的配置</h2>
+<p>1 查看评论</p>
+<p>点击 <code>存储 -&gt; 结构化数据</code>，选择 <code>创建 Class</code>，名称 <code>Comment</code>，其他保持默认，以后就可在此 Class 内查看</p>
+<blockquote>
+<p>注：选择 <code>Valine</code> 评论系统是因为支持国内网络，不需要连接外网（翻墙）就可以进行显示评论系统，而且很好管理，页面简单</p>
+</blockquote>
+<p>2 文章阅读量统计</p>
+<p>点击 <code>存储 -&gt; 结构化数据</code>，选择<code>创建 Class</code>，名称 <code>Counter</code>，其他保持默认，以后就可在此 Class 内查看</p>
+<h2 id="4-valine-的优化">4 Valine 的优化</h2>
+<h3 id="4-1-去除-valine的-powered-by">4.1 去除 Valine的 Powered By</h3>
+<p>我喜欢简洁一点，所以想去掉这个提示。查看 Elements 可以看到这个 div，那么我只要移除这个 div 下的所有子节点，就可以去掉这个 Powered By 了。</p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424152854.png" alt="image-20200424152853285"></p>
+<p>但是怎么改呢？</p>
+<p>使用 <code>F12</code>，按 <code>ctrl + shift + c</code>，鼠标放到 Powered By 的地方，点击一下，看到如下图：</p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424193358.png" alt="image-20200424193355880"></p>
+<p>这个 div 里的就是要修改的，打开 <code>themes/next/source/css/_custom/custom.styl</code> 文件，添加以下内容：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 隐藏 valine 的 powered by</span><br><span class="line"><span class="selector-class">.vcopy</span><span class="selector-class">.txt-right</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424193932.png" alt="image-20200424193931176"></p>
+<h3 id="4-2-邮件通知功能">4.2 邮件通知功能</h3>
+<h4 id="4-2-1-原邮箱模板通知功能">4.2.1 原邮箱模板通知功能</h4>
+<p>登录 <a href="https://leancloud.cn/dashboard/login.html" target="_blank" rel="noopener">leadcloud</a> 后台，在应用的<code>设置-&gt;邮件模板-&gt;邮件主题</code>（修改主题名称和内容，保存）</p>
+<p>修改邮件主题：<code>你在的评论收到了新的评论</code></p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424183458.png" alt="image-20200424183457064"></p>
+<p>内容如下：（链接为你的博客主页链接）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;Hi, &#123;&#123;username&#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;你在 &#123;&#123;appname&#125;&#125; 的评论收到了新的回复，请点击查看：&lt;/p&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">&lt;a href=&quot;https://cungudafa.gitee.io&quot; style=&quot;display: inline-block; padding: 10px 20px; border-radius: 4px; background-color: #3090e4; color: #fff; text-decoration: none;&quot;&gt;马上查看&lt;/a&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p>点击 “保存” 按钮</p>
+<p>并且修改主题配置文件：改成 true</p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424184936.png" alt="image-20200424184935074">邮件回复功能</p>
+<p>登录 <a href="https://leancloud.cn/dashboard/login.html" target="_blank" rel="noopener">leadcloud</a> 后台，在应用的<code>设置-&gt;邮件模板-&gt;邮件主题</code>（修改主题名称和内容，保存）</p>
+<p>修改邮件主题：<code>你在的评论收到了新的评论</code></p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424183458.png" alt="image-20200424183457064"></p>
+<p>内容如下：（链接为你的博客主页链接）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;Hi, &#123;&#123;username&#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;你在 &#123;&#123;appname&#125;&#125; 的评论收到了新的回复，请点击查看：&lt;/p&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">&lt;a href=&quot;https://cungudafa.gitee.io&quot; style=&quot;display: inline-block; padding: 10px 20px; border-radius: 4px; background-color: #3090e4; color: #fff; text-decoration: none;&quot;&gt;马上查看&lt;/a&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p>点击 “保存” 按钮</p>
+<p>并且修改主题配置文件：改成 true</p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424184936.png" alt="image-20200424184935074"></p>
+<p>不是很 nice！下面给出一个加强 plus 版</p>
+<h4 id="4-2-2-valine-admin-通知功能">4.2.2 Valine-Admin 通知功能</h4>
+<p>这里会使用到 Valine Admin，Valine Admin 项目是一个对 <a href="https://valine.js.org/" target="_blank" rel="noopener">Valine</a> 评论系统的拓展应用，可增强 Valine 的邮件通知功能。基于 Leancloud 的云引擎与云函数，主要实现评论邮件通知、评论管理、自定义邮件通知模板等功能，而且还可以提供邮件 <code>通知站长</code> 和 <code>@ 通知</code> 的功能。</p>
+<p>（1）设置云引擎</p>
+<ul>
+<li>
+<p>需要确保 Valine 的基础功能是正常的，参考 <a href="https://valine.js.org/" target="_blank" rel="noopener">Valine 官方文档</a></p>
+</li>
+<li>
+<p>进入 <a href="https://leancloud.cn/dashboard/applist.html#/apps" target="_blank" rel="noopener">Leancloud</a> 对应的 Valine 应用中。</p>
+</li>
+<li>
+<p>点击 <code>云引擎 -&gt; 设置</code> 填写代码库：<code>https://github.com/wugenqiang/Valine-Admin</code>，保存</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424160158.png" alt="image-20200424160156609"></p>
+<ul>
+<li>设置<code>自定义环境变量</code>，需要设置云引擎的环境变量以提供必要的信息，变量参数参考下面的<code>配置项</code></li>
+</ul>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424162618.png" alt="image-20200424162617782"></p>
+<p>配置项</p>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SITE_NAME</td>
+<td>HONGWEI’S Blog</td>
+<td>[必填] 网站名称</td>
+</tr>
+<tr>
+<td>SITE_URL</td>
+<td><a href="https://wugenqiang.github.io" target="_blank" rel="noopener">https://wugenqiang.github.io</a></td>
+<td>[必填] 网站地址，最后不要加 /</td>
+</tr>
+<tr>
+<td>SMTP_SERVICE</td>
+<td>QQ</td>
+<td>[必填] 邮件服务提供商，支持 QQ、163、126、Gmail 以及 更多。 — 如这里没有你使用的邮件提供商，请查看自定义邮件服务器</td>
+</tr>
+<tr>
+<td>SMTP_USER</td>
+<td><a href="mailto:xxxx@qq.com" target="_blank" rel="noopener">xxxx@qq.com</a></td>
+<td>[必填] SMTP登录用户，一般为邮箱地址</td>
+</tr>
+<tr>
+<td>SMTP_PASS</td>
+<td>xxxx</td>
+<td>[必填] SMTP登录密码，一般为授权码，而不是邮箱的登陆密码，请自行查询对应邮件服务商的获取方式</td>
+</tr>
+<tr>
+<td>SENDER_NAME</td>
+<td>HONGWEI’S Blog Valine 评论提醒</td>
+<td>[可选] 发件人</td>
+</tr>
+<tr>
+<td>ADMIN_URL</td>
+<td><a href="https://xxx.leanapp.cn/" target="_blank" rel="noopener">https://xxx.leanapp.cn/</a></td>
+<td>[建议] Web主机二级域名，用于自动唤醒</td>
+</tr>
+<tr>
+<td>TO_EMAIL</td>
+<td><a href="mailto:xxxxx@gmail.com" target="_blank" rel="noopener">xxxxx@gmail.com</a></td>
+<td>[可选] 指定站长收信邮箱，默认值为SITE_USER。用于 SMTP 发件人与站长收件人不一致的情况下使用。</td>
+</tr>
+<tr>
+<td>TEMPLATE_NAME</td>
+<td>rainbow</td>
+<td>[可选] 通知邮件的模板（default和rainbow），参考高级功能</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>点击 <code>云引擎 -&gt; 部署</code>，选择 <code>Git 源码部署</code>，分支或版本号输入 <code>master</code>，下载最新依赖（可选），部署</li>
+</ul>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424191415.png" alt="image-20200424191414775"></p>
+<p>（2）评论后台管理</p>
+<ul>
+<li>点击 <code>云引擎 -&gt; 设置</code>，在<code>Web主机域名</code>位置点击<code>申请</code>，获取二级域名，现在的二级域名不支持自定义，如果想好记请参考高级功能</li>
+</ul>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424162805.png" alt="image-20200424162804234"></p>
+<ul>
+<li>设置后台管理登录信息，点击 存储 -&gt; 结构化数据，选择 _ User  -&gt;  添加行，只需要填写 password、username、email 这三个字段即可, 使用 email 作为账号登陆、password 作为账号密码、username 任意即可。（为了安全考虑，此 email 必须为配置中的 SMTP_USER 或 TO_EMAIL， 否则不允许登录）_</li>
+</ul>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424163011.png" alt="image-20200424163010234"></p>
+<p>输入 <a href="https://kilqxscmpyri.leanapp.cn/" target="_blank" rel="noopener">https://kilqxscmpyri.leanapp.cn/</a> 登陆测试：输入你自己的二级域名</p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424163217.png" alt="image-20200424163216542"></p>
+<p>此后，可以通过 <code>https://二级域名.leanapp.cn/</code> 管理评论</p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424163354.png" alt="image-20200424163353928"></p>
+<p>（3）定时任务接收</p>
+<blockquote>
+<p>防止云引擎休眠</p>
+</blockquote>
+<p>免费版的 LeanCloud 容器，是有强制性休眠策略的，不能 24 小时运行：</p>
+<ul>
+<li>每天必须休眠 6 个小时</li>
+<li>30 分钟内没有外部请求，则休眠</li>
+<li>休眠后如果有新的外部请求实例则马上启动（但激活时此次发送邮件会失败）。</li>
+</ul>
+<p>分析了一下上方的策略，如果不想付费的话，最佳使用方案就设置定时器，目前基于 LeanCloud 自带定时器实现了两种云函数定时任务：</p>
+<ul>
+<li>自动唤醒，定时访问 Web APP 二级域名防止云引擎休眠（推荐）</li>
+<li>定时检查，每天定时检查 24 小时内漏发的邮件通知</li>
+</ul>
+<blockquote>
+<p>配置</p>
+</blockquote>
+<ul>
+<li>
+<p>首先需要添加环境变量，点击 <code>云引擎 -&gt; 设置</code>，配置<code>自定义环境变量</code>，变量名<code>ADMIN_URL</code>，变量值 <code>Web 主机域名，即二级域名地址</code>，添加后重启容器环境变量才会生效</p>
+</li>
+<li>
+<p>配置定时任务，击 <code>云引擎 -&gt; 定时任务</code></p>
+<ul>
+<li>配置自动唤醒（推荐），创建定时任务，名称任意，生产环境选择 self-wake 云函数，Cron 表达式填入 0 */20 7-23 * * ?，表示每天  7 - 23 点每 20 分钟访问一次，这样可以保持每天的绝大多数时间邮件服务是正常的。</li>
+<li><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424164155.png" alt="image-20200424164154408"></li>
+<li>配置定时检查，创建定时任务，名称任意，生产环境选择 resend-mails 云函数，Cron 表达式填入 0 0 8 * * ?，表示每天早 8 点检查过去 24 小时内漏发的通知邮件并补发</li>
+<li><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424164345.png" alt="image-20200424164343847"></li>
+</ul>
+</li>
+</ul>
+<p>显示这样表明 OK</p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424164657.png" alt="image-20200424164656692"></p>
+<p>效果图：</p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424191359.png" alt="image-20200424191357751"></p>
+<h3 id="4-3-实现评论显示-qq-邮箱头像">4.3 实现评论显示 QQ 邮箱头像</h3>
+<p>1 获取接口</p>
+<p>一个是 QQ 头像的，一个是 Gravatar 国内源，它们的调用方式如下：</p>
+<ul>
+<li>QQ头像： <a href="http://q1.qlogo.cn/g?b=qq&amp;nk=QQ%E5%8F%B7&amp;s=100" target="_blank" rel="noopener">http://q1.qlogo.cn/g?b=qq&amp;nk=QQ号&amp;s=100</a></li>
+<li>Gravatar头像： <a href="http://cdn.v2ex.com/gravatar/md5%E5%8A%A0%E5%AF%86%E5%90%8E%E7%9A%84%E9%82%AE%E7%AE%B1?s=100" target="_blank" rel="noopener">http://cdn.v2ex.com/gravatar/md5加密后的邮箱?s=100</a></li>
+</ul>
+<p>以上就是两个头像接口的信息，值得注意的是 Gravatar 后面的 s 分辨率参数可以随意定义，而 QQ 不行，QQ 只有几个有限的分辨率，比如 100, 200, 640，其它的数字会报 400 错误，所以 QQ 的 s 参数更像是一种清晰度，宽高还是通过 css 定义比较好。</p>
+<p>2 步骤实现：</p>
+<ul>
+<li>获取邮箱判断是否为 qq 邮箱</li>
+<li>提取 qq 号</li>
+<li>将 valine 中的头像地址改为上述接口地址</li>
+</ul>
+<p>3 F12 查看源码–发现 valine 中显示头像的相关代码是：（关键标签：<code>vimg</code>）</p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424174606.png" alt="image-20200424174604675"></p>
+<p>再以<code>ctrl+F</code>快速查找（关键词：<code>vimg</code>），不负众望，在 <a href="https://unpkg.com/valine/dist/Valine.min.js" target="_blank" rel="noopener">Valine.min.js</a> 中找到</p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424174743.png" alt="image-20200424174742603"></p>
+<p>替换掉 src 即可，好了，思路清晰，下面开始实现：</p>
+<h4 id="4-3-1-下载-valine-min-js">4.3.1 下载 Valine.min.js</h4>
+<p>引入 <a href="https://unpkg.com/valine/dist/Valine.min.js" target="_blank" rel="noopener">Valine.min.js</a> 到本地<code>themes/next/source/js/src/Valine.min.js</code><br>
+修改引入本地的 Valine</p>
+<p>在 themes/next/layout/_partials/footer.swig 中引入 <code>&lt;script src=&quot;./js/src/Valine.min.js&quot;&gt;&lt;/script&gt;</code></p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424180313.png" alt="image-20200424180312422"></p>
+<h4 id="4-3-2-增加-qq-头像判别">4.3.2 增加 QQ 头像判别</h4>
+<p>注意你的 valine 的版本号，我这里是 v1.4.9</p>
+<p>打开 Valine.min.js，<code>ctrl+F</code> 快速查找关键词：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(j.cdn+(0,s.default)(t.get(&quot;mail&quot;))+j.params)</span><br></pre></td></tr></table></figure>
+<p>稍加换行如图所示：(换行按分号换行)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//var qq_img = m.cdn + a(e.get("mail")) + m.params;</span></span><br><span class="line"><span class="keyword">var</span> qq_img = E.cdn+(<span class="number">0</span>,s.default)(t.get(<span class="string">"mail"</span>))+E.params;</span><br><span class="line"><span class="keyword">if</span> (t.get(<span class="string">"mail"</span>).indexOf(<span class="string">"@qq.com"</span>) &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">	<span class="keyword">var</span> prefix = t.get(<span class="string">"mail"</span>).replace(<span class="regexp">/@.*/</span>, <span class="string">""</span>);<span class="comment">//前缀</span></span><br><span class="line">	<span class="keyword">var</span> pattern = <span class="regexp">/^\d+$/g</span>;  <span class="comment">//正则表达式</span></span><br><span class="line">	<span class="keyword">var</span> result = prefix.match(pattern);<span class="comment">//match 是匹配的意思</span></span><br><span class="line">	<span class="keyword">if</span> (result !== <span class="literal">null</span>) &#123;</span><br><span class="line">		qq_img = <span class="string">"//q1.qlogo.cn/g?b=qq&amp;nk="</span> + prefix + <span class="string">"&amp;s=100"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>流程：</p>
+<ul>
+<li>默认还是 gravator 头像接口</li>
+<li>判断是否是 qq 邮箱，提取前缀 prefix</li>
+<li>qq 头像接口是 qq 号，如正则筛选剔除–重命名了带英文的 qq 邮箱</li>
+<li>拼接头像地址</li>
+<li>加入 src 显示！</li>
+</ul>
+<p>测试使用：</p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200424182741.png" alt="image-20200424182739812"></p>
+<h3 id="4-4-设置邮箱审核规则">4.4 设置邮箱审核规则</h3>
+<p>在 themes/next/layout/_partials/footer.swig 中引入：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">//   自定义邮箱审核规则</span></span><br><span class="line">    <span class="built_in">document</span>.body.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (e.target.classList.contains(<span class="string">'vsubmit'</span>)) &#123;</span><br><span class="line">            <span class="keyword">const</span> email = <span class="built_in">document</span>.querySelector(<span class="string">'input[type=email]'</span>);</span><br><span class="line">            <span class="keyword">const</span> nick = <span class="built_in">document</span>.querySelector(<span class="string">'input[name=nick]'</span>);</span><br><span class="line">            <span class="keyword">const</span> reg = <span class="regexp">/^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/</span>;</span><br><span class="line">            <span class="keyword">if</span> (!email.value || !nick.value || !reg.test(email.value)) &#123;</span><br><span class="line">                <span class="keyword">const</span> str = <span class="string">`&lt;div class="valert text-center"&gt;&lt;div class="vtext"&gt;请填写正确的昵称和邮箱！&lt;/div&gt;&lt;/div&gt;`</span>;</span><br><span class="line">                <span class="keyword">const</span> vmark = <span class="built_in">document</span>.querySelector(<span class="string">'.vmark'</span>);</span><br><span class="line">                vmark.innerHTML = str;</span><br><span class="line">                vmark.style.display = <span class="string">'block'</span>;</span><br><span class="line">                setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    vmark.style.display = <span class="string">'none'</span>;</span><br><span class="line">                    vmark.innerHTML = <span class="string">''</span>;</span><br><span class="line">                &#125;, <span class="number">2500</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425085135.png" alt="image-20200425085106285"></p>
+<h3 id="4-5-点击回复直接评论">4.5 点击回复直接评论</h3>
+<p>在 themes/next/layout/_partials/footer.swig 中引入：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 点击回复直接评论,官方版本点击回复时都是跳回到页面上方的评论框进行回复，评论框是固定不动的</span></span><br><span class="line">    <span class="comment">// 参考https://immmmm.com/valine-diy,用到jQuery</span></span><br><span class="line">    $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">//$('.vemoji-btn').text('😀');</span></span><br><span class="line">        $(<span class="string">"#vcomments"</span>).on(<span class="string">'click'</span>, <span class="string">'span.vat'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            $(<span class="keyword">this</span>).parent(<span class="string">'div.vmeta'</span>).next(<span class="string">"div.vcontent"</span>).after($(<span class="string">"div.vwrap"</span>));</span><br><span class="line">            $(<span class="string">'textarea#veditor'</span>).focus();</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425085301.png" alt="image-20200425085300007"></p>
+<h3 id="4-6-实现评论自定义背景">4.6 实现评论自定义背景</h3>
+<p>在 themes/next/layout/_partials/footer.swig 中引入：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="selector-tag">--</span> 评论框美化 <span class="selector-tag">--</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">    <span class="selector-id">#comments</span> <span class="selector-class">.veditor</span>&#123;</span><br><span class="line">        <span class="attribute">min-height</span>: <span class="number">10rem</span>;</span><br><span class="line">        <span class="attribute">background-image</span>: <span class="built_in">url</span>(https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425091751.png);</span><br><span class="line">        <span class="attribute">background-size</span>: contain;</span><br><span class="line">        <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">        <span class="attribute">background-position</span>: right;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(255,255,255,0);</span><br><span class="line">        <span class="attribute">resize</span>: none;&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425091911.png" alt="image-20200425091909658"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/blog/images/alipay.jpg" alt="WuGenQiang 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+          <div id="wechat" style="display: inline-block">
+            <img id="wechat_qr" src="/blog/images/wechat.jpg" alt="WuGenQiang 微信支付">
+            <p>微信支付</p>
+          </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Hexo-NexT-Template/" rel="tag"><i class="fa fa-envira"></i> Hexo-NexT-Template</a>
+          
+            <a href="/blog/tags/Valine/" rel="tag"><i class="fa fa-envira"></i> Valine</a>
+          
+        </div>
+      
+
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/articles/Hexo-NexT-Gitter.html" rel="next" title="Hexo NexT 添加 Gitter 在线交流">
+                <i class="fa fa-chevron-left"></i> Hexo NexT 添加 Gitter 在线交流
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/articles/Heap-Operation-Methods-C.html" rel="prev" title="堆的基本操作（C 语言版）">
+                堆的基本操作（C 语言版） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- wugenqiang.github.io-A01 -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1890271224952559" data-ad-slot="3230079326" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+  
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            
+              <a href="/">
+                <img class="site-author-image" itemprop="image" src="/blog/images/fighting_wugenqiang.jpg" alt="WuGenQiang">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">WuGenQiang</p>
+              <div class="site-description motion-element" itemprop="description">要么出众，要么出局</div>
+          </div>
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives">
+                
+                    <span class="site-state-item-count">38</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/blog/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/blog/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/wugenqiang" title="GitHub &rarr; https://github.com/wugenqiang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://gitee.com/wugenqiang" title="Gitee &rarr; https://gitee.com/wugenqiang" rel="noopener" target="_blank"><i class="fa fa-fw fa-gitlab"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://blog.csdn.net/wugenqiang" title="CSDN &rarr; https://blog.csdn.net/wugenqiang" rel="noopener" target="_blank"><i class="fa fa-fw fa-git-square"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#评论系统-valine-的使用"><span class="nav-text">评论系统 Valine 的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-valine-的介绍"><span class="nav-text">1 Valine 的介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-valine-的使用"><span class="nav-text">2 Valine 的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-valine-的配置"><span class="nav-text">3 Valine 的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-valine-的优化"><span class="nav-text">4 Valine 的优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-去除-valine的-powered-by"><span class="nav-text">4.1 去除 Valine的 Powered By</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-邮件通知功能"><span class="nav-text">4.2 邮件通知功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-1-原邮箱模板通知功能"><span class="nav-text">4.2.1 原邮箱模板通知功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-2-valine-admin-通知功能"><span class="nav-text">4.2.2 Valine-Admin 通知功能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-实现评论显示-qq-邮箱头像"><span class="nav-text">4.3 实现评论显示 QQ 邮箱头像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-1-下载-valine-min-js"><span class="nav-text">4.3.1 下载 Valine.min.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-2-增加-qq-头像判别"><span class="nav-text">4.3.2 增加 QQ 头像判别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-设置邮箱审核规则"><span class="nav-text">4.4 设置邮箱审核规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-点击回复直接评论"><span class="nav-text">4.5 点击回复直接评论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-实现评论自定义背景"><span class="nav-text">4.6 实现评论自定义背景</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- wugenqiang.github.io-A02 -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1890271224952559" data-ad-slot="2794965055" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+
+    </div>
+  </aside>
+
+  
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WuGenQiang</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!-- 样式二（飘动的彩带） -->
+<script type="text/javascript" src="/js/src/piaodai.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- 先引入样式 -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script> -->
+<script src="./js/src/jquery.min.js"></script>
+<!-- 引入Valine -->
+<!-- https://unpkg.com/valine/dist/Valine.min.js -->
+<script src="./js/src/Valine.min.js"></script>
+
+<!-- 评论框美化 -->
+<style>
+    #comments .veditor{
+        min-height: 10rem;
+        background-image: url(https://gitee.com/wugenqiang/PictureBed/raw/master/CS-Notes/20200425091751.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-color: rgba(255,255,255,0);
+        resize: none;}
+</style>
+
+<script>
+    //   自定义邮箱审核规则
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!email.value || !nick.value || !reg.test(email.value)) {
+                const str = `<div class="valert text-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
+                setTimeout(function() {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 2500);
+            }
+        }
+    });
+    // 点击回复直接评论,官方版本点击回复时都是跳回到页面上方的评论框进行回复，评论框是固定不动的
+    // 参考https://immmmm.com/valine-diy,用到jQuery
+    $(document).ready(function(){
+        //$('.vemoji-btn').text('😀');
+        $("#vcomments").on('click', 'span.vat',function(){
+            $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+            $('textarea#veditor').focus();
+        })
+    })
+</script>
+
+<div>
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>  Sometimes your whole life boils down to one insame move.
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/09/2019 13:14:21");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+<!-- 网站底部字数统计 -->
+<div class="theme-info">
+  <i class="fa fa-pencil"></i>
+  <span class="post-count">博客全站共 42.3k 字</span>
+</div>
+
+<!-- 不蒜字统计 -->
+<div>
+	<i class="fa fa-user-md"></i>
+	<span id="busuanzi_container_site_uv">
+    本站访客数 <span id="busuanzi_value_site_uv"></span> 人次
+  </span>&nbsp;|&nbsp;
+
+	<i class="fa fa-eye"></i>
+	<span id="busuanzi_container_site_pv">
+      本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+  </span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/affix.js?v=7.0.1"></script>
+
+  <script src="/blog/js/src/schemes/pisces.js?v=7.0.1"></script>
+
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
+
+<script type="text/javascript" src="/blog/js/src/photoswipe.min.js?v="></script>
+<script type="text/javascript" src="/blog/js/src/photoswipe-ui-default.min.js?v="></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KIlqXsCmzBUnovnvh5ih8mk9-gzGzoHsz',
+    appKey: 'e0v6zIg2NGg44PM6MVLa7voo',
+    placeholder: '交流中让我们一起进步',
+    avatar: 'monsterid',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true
+  });
+  //新增以下代码即可，可以移除.info下所有子节点。
+  var infoEle = document.querySelector('#comments .info');
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+    infoEle.childNodes.forEach(function(item) {
+      item.parentNode.removeChild(item);
+    });
+   }
+</script>
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+<style>
+.pdfobject-container {
+  position: relative;
+  overflow: auto;
+  width: 100%;
+}
+</style>
+<script>
+if ($('body').find('div.pdf').length) {
+  $.ajax({
+    type: 'GET',
+    url: '//cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      $('body').find('div.pdf').each(function(i, o) {
+        PDFObject.embed($(o).attr('target'), $(o), {
+          pdfOpenParams: {
+            navpanes: 0,
+            toolbar: 0,
+            statusbar: 0,
+            pagemode: 'thumbs',
+            view: 'FitH'
+          },
+          PDFJS_URL: '/lib/pdf/web/viewer.html',
+          height: $(o).attr('height') || '500px'
+        });
+      });
+    },
+  });
+}
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<style>
+  .copy-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #333;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+    
+    user-select: none;
+    outline: 0;
+  }
+
+  .highlight-wrap .copy-btn {
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
+    padding: 2px 6px;
+    position: absolute;
+    
+      right: 4px;
+      top: 8px;
+    
+  }
+
+  .highlight-wrap:hover .copy-btn,
+  .highlight-wrap .copy-btn:focus {
+    opacity: 1;
+  }
+
+  .highlight-wrap {
+    position: relative;
+  }
+</style>
+<script>
+  $('.highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+        if (result) $(this).text('复制成功');
+        else $(this).text('复制失败');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
+
+  <!--使用 Gitter 实现一个 IM 即时通讯聊天室功能-->
+  <script>
+    ((window.gitter = {}).chat = {}).options = {
+      room: 'enjoytoshare/community'
+    };
+  </script>
+  <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+
+  
+
+</body>
+</html>
