@@ -1,5 +1,5 @@
 # 👒 静态文件存储库
-> 地址：[https://wugenqiang.js.org/](https://wugenqiang.js.org/) + src + [ js/css/json ] 具体看下面使用链接，可以直接引用！链接地址不会改变！内容会不断完善！🎉🎉 源文件地址：[https://github.com/wugenqiang/StaticRepo](https://github.com/wugenqiang/StaticRepo)
+> 地址：[https://wugenqiang.github.io/StaticRepo/](https://wugenqiang.github.io/StaticRepo/) + src + [ js/css/json ] 具体看下面使用链接，可以直接引用！链接地址不会改变！内容会不断完善！🎉🎉 源文件地址：[https://github.com/wugenqiang/StaticRepo](https://github.com/wugenqiang/StaticRepo)
 
 ## Src
 ### CSS
