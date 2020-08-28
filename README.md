@@ -1,6 +1,8 @@
 # 👒 静态文件存储库
 > 地址使用一：[https://wugenqiang.github.io/StaticRepo/](https://wugenqiang.github.io/StaticRepo/) + src + [ js/css/json ] 
+>
 > 地址使用二（CDN）：[https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/](https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/)
+>
 > 具体看下面使用链接，可以直接引用！链接地址不会改变！内容会不断完善！🎉🎉 源文件地址：[https://github.com/wugenqiang/StaticRepo](https://github.com/wugenqiang/StaticRepo)
 
 ## Src
