@@ -14,6 +14,9 @@
 
 * sponsor.js：[https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/js/sponsor.js](https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/js/sponsor.js)
 
+> 代码块高亮显示
+* prism-go.js：[https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/js/prism-go.js](https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/js/prism-go.js)
+
 ## 小功能体验区
 
 ### 打赏 Sponsor
