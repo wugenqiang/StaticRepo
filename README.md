@@ -16,6 +16,7 @@
 
 > 代码块高亮显示
 * prism-go.js：[https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/js/prism-go.js](https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/js/prism-go.js)
+* prism-matlab.js：[https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/js/prism-matlab.js](https://cdn.jsdelivr.net/gh/wugenqiang/StaticRepo/src/js/prism-matlab.js)
 
 ## 小功能体验区
 
